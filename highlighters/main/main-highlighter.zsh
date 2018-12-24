@@ -152,6 +152,10 @@ _zsh_highlight_main__type() {
     fi
   fi
 
+  if [ "$this_word" = ":sudo_opt::start:" ]; then
+    local PATH="${PATH}:${ZSH_HIGHLIGHT_SPECIAL_PATH}"
+  fi
+
   # Main logic
   if (( $#options_to_set )); then
     setopt localoptions $options_to_set;
