@@ -153,7 +153,9 @@ _zsh_highlight_main__type() {
   fi
 
   if [ "$this_word" = ":sudo_opt::start:" ]; then
-    local PATH="${PATH}:${ZSH_HIGHLIGHT_SPECIAL_PATH}"
+    if [  -n  "${ZSH_HIGHLIGHT_SPECIAL_PATH}" ]; then
+      local PATH="${ZSH_HIGHLIGHT_SPECIAL_PATH}"
+    fi
   fi
 
   # Main logic
